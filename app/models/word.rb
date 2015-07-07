@@ -7,7 +7,7 @@ class Word < ActiveRecord::Base
   
   private
   def verifica_anagrama
-    errors.add("Não é um anagrama") unless word1.downcase.chars.sort == word2.downcase.chars.sort && word1 != word2
+    errors.add(:word, "Não é um anagrama") unless word1.downcase.chars.sort == word2.downcase.chars.sort && word1 != word2
   end
   
   def carol
