@@ -31,7 +31,7 @@ class WordsController < ApplicationController
         format.html { redirect_to @word, notice: 'As duas palavras são anagrama!' }
         format.json { render :show, status: :created, location: @word }
       else
-        format.html { render :new }
+        format.html { redirect_to @word, notice: 'Não são anagrama!' }
         format.json { render json: @word.errors, status: :unprocessable_entity }
       end
     end
